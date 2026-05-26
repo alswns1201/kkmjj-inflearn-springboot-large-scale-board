@@ -17,6 +17,7 @@ import java.util.List;
 public class CommentControllerV2 {
     private final CommentServiceV2 commentService;
 
+
     @GetMapping("/v2/comments/{commentId}")
     public CommentResponse read(
             @PathVariable("commentId") Long commentId
@@ -51,6 +52,14 @@ public class CommentControllerV2 {
     ) {
         return commentService.readAllInfiniteScroll(articleId, lastPath, pageSize);
     }
+
+    @GetMapping("/v2/comments/articles/{articleId}")
+    public Long count(
+            @PathVariable("articleId") Long articleId
+    ) {
+        return commentService.count(articleId);
+    }
+
 
 
 }
