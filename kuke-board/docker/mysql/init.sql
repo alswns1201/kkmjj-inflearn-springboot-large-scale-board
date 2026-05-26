@@ -70,3 +70,19 @@ CREATE TABLE IF NOT EXISTS article_like_count (
     PRIMARY KEY (article_id)
 );
 
+USE article;
+
+CREATE TABLE IF NOT EXISTS board_article_count (
+    board_id  BIGINT   NOT NULL,
+    article_count  BIGINT   NOT NULL,
+    version BIGINT NOT NULL,
+    PRIMARY KEY (board_id)
+);
+
+USE comment;
+CREATE TABLE IF NOT EXISTS article_comment_count (
+    article_id  BIGINT   NOT NULL,
+    comment_count  BIGINT   NOT NULL,
+    version BIGINT NOT NULL,
+    PRIMARY KEY (article_id)
+);
