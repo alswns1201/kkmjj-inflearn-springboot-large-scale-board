@@ -86,3 +86,13 @@ CREATE TABLE IF NOT EXISTS article_comment_count (
     version BIGINT NOT NULL,
     PRIMARY KEY (article_id)
 );
+
+CREATE DATABASE IF NOT EXISTS article_view CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci;
+
+USE article_view;
+
+CREATE TABLE IF NOT EXISTS article_view_count (
+    article_id  BIGINT   NOT NULL,
+    view_count  BIGINT   NOT NULL,
+    PRIMARY KEY (article_id)
+);
