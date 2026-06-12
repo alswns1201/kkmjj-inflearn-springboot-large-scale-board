@@ -14,9 +14,15 @@ services:
 
   redis:
     image: redis:7.4
-    container_name: kubke-board-redis
+    container_name: kuke-board-redis
     ports:
       - "6379:6379"
+
+  kafka:
+    image: apache/kafka:3.8.0
+    container_name: kuke-board-kafka
+    ports:
+      - "9092:9092"
 
 volumes:
   mysql-data:
